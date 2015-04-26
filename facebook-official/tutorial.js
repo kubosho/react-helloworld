@@ -1,3 +1,5 @@
+/* global marked */
+
 "use strict";
 
 var CommentBox = React.createClass({
@@ -40,7 +42,7 @@ var Comment = React.createClass({
         <h2 className="commentAuthor">
           {this.props.author}
         </h2>
-        {this.props.children}
+        {marked(this.props.children.toString())}
       </div>
     );
   }
