@@ -1,6 +1,7 @@
 # React tutorial
 
 ```shell
-cd /path/to/react-tutorial
+# facebook official tutorial
+cd /path/to/react-tutorial/facebook-official
 python -m SimpleHTTPServer 50000
 ```
