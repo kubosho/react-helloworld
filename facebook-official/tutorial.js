@@ -21,6 +21,10 @@ var CommentBox = React.createClass({
     });
   },
 
+  handleCommentSubmit: function(comment) {
+    // TOOD: submit to the server and refresh the list
+  },
+
   getInitialState: function() {
     return {data: []};
   },
@@ -35,7 +39,7 @@ var CommentBox = React.createClass({
       <div className="commentBox">
         <h1>Comments</h1>
         <CommentList data={this.state.data} />
-        <CommentForm />
+        <CommentForm onCommentSubmit={this.handleCommentSubmit} />
       </div>
     );
   }
