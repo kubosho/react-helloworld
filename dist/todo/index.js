@@ -19040,6 +19040,7 @@ class TodoList extends React.Component {
         { id: 3, text: "baz" }
       ]
     };
+    this.handleDeleteTodo = this.handleDeleteTodo.bind(this);
   }
 
   handleDeleteTodo(id) {
@@ -19054,7 +19055,7 @@ class TodoList extends React.Component {
     const todos = this.state.todos.map((todo) => {
       return (
         React.createElement("li", {key: todo.id}, 
-          React.createElement(Todo, {onDelete: this.handleDeleteTodo.bind(this), todo: todo})
+          React.createElement(Todo, {onDelete: this.handleDeleteTodo, todo: todo})
         )
       );
     });
@@ -19072,6 +19073,7 @@ const React = require("react");
 class Todo extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleDelete() {
@@ -19082,7 +19084,7 @@ class Todo extends React.Component {
     return (
       React.createElement("div", null, 
         React.createElement("span", null, this.props.todo.text), 
-        React.createElement("button", {onClick: this.handleDelete.bind(this)}, "Delete")
+        React.createElement("button", {onClick: this.handleDelete}, "Delete")
       )
     );
   }

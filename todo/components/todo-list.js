@@ -13,6 +13,7 @@ class TodoList extends React.Component {
         { id: 3, text: "baz" }
       ]
     };
+    this.handleDeleteTodo = this.handleDeleteTodo.bind(this);
   }
 
   handleDeleteTodo(id) {
@@ -27,7 +28,7 @@ class TodoList extends React.Component {
     const todos = this.state.todos.map((todo) => {
       return (
         <li key={todo.id}>
-          <Todo onDelete={this.handleDeleteTodo.bind(this)} todo={todo} />
+          <Todo onDelete={this.handleDeleteTodo} todo={todo} />
         </li>
       );
     });

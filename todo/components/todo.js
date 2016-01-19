@@ -5,6 +5,7 @@ const React = require("react");
 class Todo extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleDelete() {
@@ -15,7 +16,7 @@ class Todo extends React.Component {
     return (
       <div>
         <span>{this.props.todo.text}</span>
-        <button onClick={this.handleDelete.bind(this)}>Delete</button>
+        <button onClick={this.handleDelete}>Delete</button>
       </div>
     );
   }
