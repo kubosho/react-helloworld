@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build:initial-state": "browserify -t reactify initial-state-based-on-props/index.js > dist/initial-state-based-on-props/index.js && cp initial-state-based-on-props/index.html dist/initial-state-based-on-props/index.html",
     "build:todo": "browserify -t reactify todo/index.js > dist/todo/index.js && cp todo/index.html dist/todo/index.html"
   },
   "repository": {
